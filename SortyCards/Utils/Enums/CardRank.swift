@@ -28,7 +28,7 @@ enum CardRank: Int, CustomStringConvertible {
             return String(self.rawValue)
         }
     }
-    
+
     static func allValues() -> [CardRank] {
         return [.ace, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .jack, .queen, .king]
     }

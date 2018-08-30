@@ -117,44 +117,121 @@ class CardSorter {
     }
 
     private static func sortSmart(deck: [SortyCard]) -> [[SortyCard]]? {
-        var sortedCardList = [[SortyCard]]()
-        var searchDeck = deck
-        
-        let sort123CardGroups = sort123(deck: deck)
+        let possibleCardGroups = getPossibleCardGroupsForSortSmart(deck: deck)
 
-        if let sort123CardGroups = sort123CardGroups {
-            for cardGroup in sort123CardGroups {
-                if cardGroup.count > 3 {
-                    let difference = cardGroup.count - 3
-                    
-                    for index in ((cardGroup.count - 1 - difference)..<(cardGroup.count - 1)).reversed() {
-                        let sort777CardGroups = sort777(deck: searchDeck)
+        let cardGroupsAndScores = getPossibleCardGroupsWithScoresForSortSmart(possibleCardGroups: possibleCardGroups)
+        
+        let cardGroupCombinationsWithTotalScores = getCardGroupCombinationsWithTotalScoresForSortSmart(cardGroupsAndScores: cardGroupsAndScores)
+
+        if let selectedDeck = cardGroupCombinationsWithTotalScores.first?.0 {
+            var sortedCardList = selectedDeck
+            var searchDeck = deck
+
+            for cardGroup in selectedDeck {
+                for card in cardGroup {
+                    if let index = searchDeck.index(of: card) {
+                        searchDeck.remove(at: index)
                     }
-                } else {
-                    sortedCardList.append(cardGroup)
-                    searchDeck = searchDeck.filter({ (sortyCard) -> Bool in
-                        return !cardGroup.contains(sortyCard)
-                    })
                 }
             }
-        } else {
-            return nil
+            
+            sortedCardList.append(searchDeck)
+
+            return checkAndReturn(sortedCardList: sortedCardList)
         }
 
-        for card in deck {
-            let sortedCards = checkSameTypeCardsForSort777(card: card, deck: searchDeck)
-
-            if sortedCards.count > 2 {
-                sortedCardList.append(sortedCards)
-                searchDeck = searchDeck.filter({ (sortyCard) -> Bool in
-                    return !sortedCards.contains(sortyCard)
-                })
+        return nil
+    }
+    
+    private static func getPossibleCardGroupsForSortSmart(deck: [SortyCard]) -> [[SortyCard]] {
+        var possibleCardGroups = [[SortyCard]]()
+        
+        let sort123CardGroups = sort123(deck: deck)
+        let sort777CardGroups = sort777(deck: deck)
+        
+        if let sort123CardGroups = sort123CardGroups {
+            for i in 0..<sort123CardGroups.count - 1 {
+                possibleCardGroups.append(sort123CardGroups[i])
+                
+                for j in 3..<sort123CardGroups[i].count {
+                    for k in 0...sort123CardGroups[i].count - j {
+                        possibleCardGroups.append(Array(sort123CardGroups[i][k..<k + j]))
+                    }
+                }
             }
         }
-
-        sortedCardList.append(searchDeck)
-
-        return checkAndReturn(sortedCardList: sortedCardList)
+        
+        if let sort777CardGroups = sort777CardGroups {
+            for i in 0..<sort777CardGroups.count - 1 {
+                possibleCardGroups.append(sort777CardGroups[i])
+                
+                if sort777CardGroups[i].count == 4 {
+                    let indexes = [0, 1, 2, 3]
+                    
+                    for j in indexes {
+                        var cardGroup = sort777CardGroups[i]
+                        cardGroup.remove(at: j)
+                        
+                        possibleCardGroups.append(cardGroup)
+                    }
+                }
+            }
+        }
+        
+        return possibleCardGroups
+    }
+    
+    private static func getPossibleCardGroupsWithScoresForSortSmart(possibleCardGroups: [[SortyCard]]) -> [([SortyCard], Int)] {
+        let cardGroupScores = possibleCardGroups.map { (cardGroup: [SortyCard]) -> (Int) in
+            var score = 0
+            
+            for card in cardGroup {
+                score += card.rank.rawValue
+            }
+            
+            return score
+        }
+        
+        return zip(possibleCardGroups, cardGroupScores).sorted { (cardGroupAndScore1, cardGroupAndScore2) -> Bool in
+            return cardGroupAndScore1.1 > cardGroupAndScore2.1
+        }
+    }
+    
+    private static func getCardGroupCombinationsWithTotalScoresForSortSmart(cardGroupsAndScores: [([SortyCard], Int)]) -> [([[SortyCard]], Int)] {
+        var cardGroupCombinationsWithTotalScores = [([[SortyCard]](), 0)]
+        
+        for i in 0..<cardGroupsAndScores.count {
+            var cardGroupCombination = [[SortyCard]]()
+            var cardGroupCombinationTotalScore = 0
+            
+            cardGroupCombination.append(cardGroupsAndScores[i].0)
+            cardGroupCombinationTotalScore += cardGroupsAndScores[i].1
+            
+            for j in 0..<cardGroupsAndScores.count {
+                var isConflict = false
+                let currentCardGroup = cardGroupsAndScores[j].0
+                
+                for cardGroup in cardGroupCombination {
+                    if cardGroup.contains(where: { (sortyCard) -> Bool in
+                        return currentCardGroup.contains(sortyCard)
+                    }) {
+                        isConflict = true
+                        break
+                    }
+                }
+                
+                if !isConflict {
+                    cardGroupCombination.append(currentCardGroup)
+                    cardGroupCombinationTotalScore += cardGroupsAndScores[i].1
+                }
+            }
+            
+            cardGroupCombinationsWithTotalScores.append((cardGroupCombination, cardGroupCombinationTotalScore))
+        }
+        
+        return cardGroupCombinationsWithTotalScores.sorted { (cardGroupCombination1, cardGroupCombination2) -> Bool in
+            return cardGroupCombination1.1 > cardGroupCombination2.1
+        }
     }
 
     private static func checkAndReturn(sortedCardList: [[SortyCard]]) -> [[SortyCard]]? {

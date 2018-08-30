@@ -21,7 +21,6 @@
 		7459336C213856C7005F35F1 /* CardRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459336B213856C7005F35F1 /* CardRank.swift */; };
 		7459336E21385730005F35F1 /* SortyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459336D21385730005F35F1 /* SortyCard.swift */; };
 		7459337121385A17005F35F1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459337021385A17005F35F1 /* ArrayExtensions.swift */; };
-		7459337321385E2E005F35F1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7459337221385E2D005F35F1 /* Info.plist */; };
 		7459337521385F7B005F35F1 /* CardSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459337421385F7B005F35F1 /* CardSorter.swift */; };
 		74F74BD62143085A008A3DC1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */; };
 		74F74BDC21446D3B008A3DC1 /* CardSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BDB21446D3B008A3DC1 /* CardSorterTests.swift */; };
@@ -392,7 +391,6 @@
 				74593364213854E7005F35F1 /* SortyCardView.xib in Resources */,
 				745933342138536D005F35F1 /* LaunchScreen.storyboard in Resources */,
 				745933312138536D005F35F1 /* Assets.xcassets in Resources */,
-				7459337321385E2E005F35F1 /* Info.plist in Resources */,
 				7459332C2138536D005F35F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

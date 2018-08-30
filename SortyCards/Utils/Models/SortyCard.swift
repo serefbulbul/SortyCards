@@ -20,7 +20,7 @@ struct SortyCard: CustomStringConvertible, Equatable {
     var image: UIImage? {
         return UIImage(named: "\(rank.description)_of_\(type.description)")
     }
-    
+
     var viewTag: Int {
         return type.priority * 1000 + rank.rawValue
     }

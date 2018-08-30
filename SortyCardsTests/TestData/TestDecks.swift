@@ -120,4 +120,39 @@ class TestDecks {
                         SortyCard(rank: .three, type: .spades),
                         SortyCard(rank: .four, type: .diamonds)]
     
+    static let deck9 = [SortyCard(rank: .ace, type: .clubs),
+                        SortyCard(rank: .two, type: .clubs),
+                        SortyCard(rank: .five, type: .spades),
+                        SortyCard(rank: .four, type: .clubs),
+                        SortyCard(rank: .ace, type: .spades),
+                        SortyCard(rank: .three, type: .diamonds),
+                        SortyCard(rank: .queen, type: .clubs),
+                        SortyCard(rank: .four, type: .hearts),
+                        SortyCard(rank: .jack, type: .diamonds),
+                        SortyCard(rank: .three, type: .spades),
+                        SortyCard(rank: .king, type: .diamonds)]
+    
+    static let deck10 = [SortyCard(rank: .two, type: .hearts),
+                         SortyCard(rank: .two, type: .spades),
+                         SortyCard(rank: .five, type: .diamonds),
+                         SortyCard(rank: .four, type: .hearts),
+                         SortyCard(rank: .ace, type: .spades),
+                         SortyCard(rank: .three, type: .diamonds),
+                         SortyCard(rank: .four, type: .clubs),
+                         SortyCard(rank: .four, type: .spades),
+                         SortyCard(rank: .two, type: .diamonds),
+                         SortyCard(rank: .three, type: .spades),
+                         SortyCard(rank: .four, type: .diamonds)]
+    
+    static let deck11 = [SortyCard(rank: .two, type: .clubs),
+                         SortyCard(rank: .five, type: .spades),
+                         SortyCard(rank: .five, type: .diamonds),
+                         SortyCard(rank: .four, type: .hearts),
+                         SortyCard(rank: .five, type: .hearts),
+                         SortyCard(rank: .three, type: .diamonds),
+                         SortyCard(rank: .four, type: .clubs),
+                         SortyCard(rank: .four, type: .spades),
+                         SortyCard(rank: .two, type: .diamonds),
+                         SortyCard(rank: .three, type: .spades),
+                         SortyCard(rank: .four, type: .diamonds)]
 }

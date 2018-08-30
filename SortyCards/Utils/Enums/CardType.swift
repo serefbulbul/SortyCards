@@ -9,9 +9,9 @@
 import Foundation
 
 enum CardType: CustomStringConvertible {
-    
+
     case spades, hearts, diamonds, clubs
-    
+
     var description: String {
         switch self {
         case .spades:
@@ -24,7 +24,7 @@ enum CardType: CustomStringConvertible {
             return "clubs"
         }
     }
-    
+
     var priority: Int {
         switch self {
         case .spades:
@@ -37,9 +37,9 @@ enum CardType: CustomStringConvertible {
             return 4
         }
     }
-    
+
     static func allValues() -> [CardType] {
-        return  [.spades, .hearts, .diamonds, .clubs]
+        return [.spades, .hearts, .diamonds, .clubs]
     }
-    
+
 }

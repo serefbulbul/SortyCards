@@ -54,16 +54,16 @@ class SortyCardView: UIView {
         guard let superview = superview else {
             return nil
         }
-        
+
         var contentViewIntersectionFrame = CGRect.zero
-        
+
         if requestEntireCard {
             contentViewIntersectionFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: SortyCardConstants.cardWidth, height: contentView.frame.size.height)
         } else {
             contentViewIntersectionFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: SortyCardConstants.cardWidth / 2.0, height: contentView.frame.size.height)
         }
-        
+
         return superview.convert(contentViewIntersectionFrame, from: self)
     }
-    
+
 }
