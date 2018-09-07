@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		745933272138536D005F35F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745933262138536D005F35F1 /* AppDelegate.swift */; };
+		745933292138536D005F35F1 /* SortyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745933282138536D005F35F1 /* SortyCardsViewController.swift */; };
+		7459332C2138536D005F35F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7459332A2138536D005F35F1 /* Main.storyboard */; };
+		7459332F2138536D005F35F1 /* SortyCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7459332D2138536D005F35F1 /* SortyCards.xcdatamodeld */; };
+		745933312138536D005F35F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745933302138536D005F35F1 /* Assets.xcassets */; };
+		745933342138536D005F35F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745933322138536D005F35F1 /* LaunchScreen.storyboard */; };
+		7459333F2138536D005F35F1 /* SortyCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459333E2138536D005F35F1 /* SortyCardsTests.swift */; };
+		7459334A2138536D005F35F1 /* SortyCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745933492138536D005F35F1 /* SortyCardsUITests.swift */; };
+		74593362213854DC005F35F1 /* SortyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74593361213854DC005F35F1 /* SortyCardView.swift */; };
+		74593364213854E7005F35F1 /* SortyCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74593363213854E7005F35F1 /* SortyCardView.xib */; };
+		7459336A213855D5005F35F1 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74593369213855D5005F35F1 /* CardType.swift */; };
+		7459336C213856C7005F35F1 /* CardRank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459336B213856C7005F35F1 /* CardRank.swift */; };
+		7459336E21385730005F35F1 /* SortyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459336D21385730005F35F1 /* SortyCard.swift */; };
+		7459337121385A17005F35F1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459337021385A17005F35F1 /* ArrayExtensions.swift */; };
+		7459337321385E2E005F35F1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7459337221385E2D005F35F1 /* Info.plist */; };
+		7459337521385F7B005F35F1 /* CardSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459337421385F7B005F35F1 /* CardSorter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7459333B2138536D005F35F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7459331B2138536D005F35F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 745933222138536D005F35F1;
+			remoteInfo = SortyCards;
+		};
+		745933462138536D005F35F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7459331B2138536D005F35F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 745933222138536D005F35F1;
+			remoteInfo = SortyCards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		745933232138536D005F35F1 /* SortyCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SortyCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		745933262138536D005F35F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		745933282138536D005F35F1 /* SortyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortyCardsViewController.swift; sourceTree = "<group>"; };
+		7459332B2138536D005F35F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7459332E2138536D005F35F1 /* SortyCards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SortyCards.xcdatamodel; sourceTree = "<group>"; };
+		745933302138536D005F35F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		745933332138536D005F35F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7459333A2138536D005F35F1 /* SortyCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SortyCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7459333E2138536D005F35F1 /* SortyCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortyCardsTests.swift; sourceTree = "<group>"; };
+		745933402138536D005F35F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		745933452138536D005F35F1 /* SortyCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SortyCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		745933492138536D005F35F1 /* SortyCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortyCardsUITests.swift; sourceTree = "<group>"; };
+		7459334B2138536D005F35F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74593361213854DC005F35F1 /* SortyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortyCardView.swift; sourceTree = "<group>"; };
+		74593363213854E7005F35F1 /* SortyCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortyCardView.xib; sourceTree = "<group>"; };
+		74593369213855D5005F35F1 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		7459336B213856C7005F35F1 /* CardRank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRank.swift; sourceTree = "<group>"; };
+		7459336D21385730005F35F1 /* SortyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortyCard.swift; sourceTree = "<group>"; };
+		7459337021385A17005F35F1 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		7459337221385E2D005F35F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7459337421385F7B005F35F1 /* CardSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSorter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		745933202138536D005F35F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		745933372138536D005F35F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		745933422138536D005F35F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7459331A2138536D005F35F1 = {
+			isa = PBXGroup;
+			children = (
+				745933252138536D005F35F1 /* SortyCards */,
+				7459333D2138536D005F35F1 /* SortyCardsTests */,
+				745933482138536D005F35F1 /* SortyCardsUITests */,
+				745933242138536D005F35F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		745933242138536D005F35F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				745933232138536D005F35F1 /* SortyCards.app */,
+				7459333A2138536D005F35F1 /* SortyCardsTests.xctest */,
+				745933452138536D005F35F1 /* SortyCardsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		745933252138536D005F35F1 /* SortyCards */ = {
+			isa = PBXGroup;
+			children = (
+				7459337221385E2D005F35F1 /* Info.plist */,
+				7459335721385371005F35F1 /* Application */,
+				7459335821385385005F35F1 /* Scenes */,
+				7459335921385399005F35F1 /* Utils */,
+			);
+			path = SortyCards;
+			sourceTree = "<group>";
+		};
+		7459333D2138536D005F35F1 /* SortyCardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				7459333E2138536D005F35F1 /* SortyCardsTests.swift */,
+				745933402138536D005F35F1 /* Info.plist */,
+			);
+			path = SortyCardsTests;
+			sourceTree = "<group>";
+		};
+		745933482138536D005F35F1 /* SortyCardsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				745933492138536D005F35F1 /* SortyCardsUITests.swift */,
+				7459334B2138536D005F35F1 /* Info.plist */,
+			);
+			path = SortyCardsUITests;
+			sourceTree = "<group>";
+		};
+		7459335721385371005F35F1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				745933262138536D005F35F1 /* AppDelegate.swift */,
+				745933302138536D005F35F1 /* Assets.xcassets */,
+				745933322138536D005F35F1 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		7459335821385385005F35F1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7459332A2138536D005F35F1 /* Main.storyboard */,
+				745933282138536D005F35F1 /* SortyCardsViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7459335921385399005F35F1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7459336F21385A0A005F35F1 /* Extensions */,
+				745933652138551C005F35F1 /* Helpers */,
+				7459335F213854C3005F35F1 /* Views */,
+				7459335E213853F5005F35F1 /* Models */,
+				7459335D213853EC005F35F1 /* Constants */,
+				7459335C213853E6005F35F1 /* Enums */,
+				7459335A213853A1005F35F1 /* Services */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7459335A213853A1005F35F1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7459335B213853A5005F35F1 /* CoreData */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7459335B213853A5005F35F1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7459332D2138536D005F35F1 /* SortyCards.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7459335C213853E6005F35F1 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				74593369213855D5005F35F1 /* CardType.swift */,
+				7459336B213856C7005F35F1 /* CardRank.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		7459335D213853EC005F35F1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		7459335E213853F5005F35F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7459336D21385730005F35F1 /* SortyCard.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7459335F213854C3005F35F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74593360213854C8005F35F1 /* SortyCardView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74593360213854C8005F35F1 /* SortyCardView */ = {
+			isa = PBXGroup;
+			children = (
+				74593361213854DC005F35F1 /* SortyCardView.swift */,
+				74593363213854E7005F35F1 /* SortyCardView.xib */,
+			);
+			path = SortyCardView;
+			sourceTree = "<group>";
+		};
+		745933652138551C005F35F1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7459337421385F7B005F35F1 /* CardSorter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7459336F21385A0A005F35F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7459337021385A17005F35F1 /* ArrayExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		745933222138536D005F35F1 /* SortyCards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7459334E2138536D005F35F1 /* Build configuration list for PBXNativeTarget "SortyCards" */;
+			buildPhases = (
+				7459331F2138536D005F35F1 /* Sources */,
+				745933202138536D005F35F1 /* Frameworks */,
+				745933212138536D005F35F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SortyCards;
+			productName = SortyCards;
+			productReference = 745933232138536D005F35F1 /* SortyCards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		745933392138536D005F35F1 /* SortyCardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 745933512138536D005F35F1 /* Build configuration list for PBXNativeTarget "SortyCardsTests" */;
+			buildPhases = (
+				745933362138536D005F35F1 /* Sources */,
+				745933372138536D005F35F1 /* Frameworks */,
+				745933382138536D005F35F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7459333C2138536D005F35F1 /* PBXTargetDependency */,
+			);
+			name = SortyCardsTests;
+			productName = SortyCardsTests;
+			productReference = 7459333A2138536D005F35F1 /* SortyCardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		745933442138536D005F35F1 /* SortyCardsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 745933542138536D005F35F1 /* Build configuration list for PBXNativeTarget "SortyCardsUITests" */;
+			buildPhases = (
+				745933412138536D005F35F1 /* Sources */,
+				745933422138536D005F35F1 /* Frameworks */,
+				745933432138536D005F35F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				745933472138536D005F35F1 /* PBXTargetDependency */,
+			);
+			name = SortyCardsUITests;
+			productName = SortyCardsUITests;
+			productReference = 745933452138536D005F35F1 /* SortyCardsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7459331B2138536D005F35F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Seref Bulbul";
+				TargetAttributes = {
+					745933222138536D005F35F1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					745933392138536D005F35F1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 745933222138536D005F35F1;
+					};
+					745933442138536D005F35F1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 745933222138536D005F35F1;
+					};
+				};
+			};
+			buildConfigurationList = 7459331E2138536D005F35F1 /* Build configuration list for PBXProject "SortyCards" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7459331A2138536D005F35F1;
+			productRefGroup = 745933242138536D005F35F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				745933222138536D005F35F1 /* SortyCards */,
+				745933392138536D005F35F1 /* SortyCardsTests */,
+				745933442138536D005F35F1 /* SortyCardsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		745933212138536D005F35F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74593364213854E7005F35F1 /* SortyCardView.xib in Resources */,
+				745933342138536D005F35F1 /* LaunchScreen.storyboard in Resources */,
+				745933312138536D005F35F1 /* Assets.xcassets in Resources */,
+				7459337321385E2E005F35F1 /* Info.plist in Resources */,
+				7459332C2138536D005F35F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		745933382138536D005F35F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		745933432138536D005F35F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7459331F2138536D005F35F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7459337521385F7B005F35F1 /* CardSorter.swift in Sources */,
+				74593362213854DC005F35F1 /* SortyCardView.swift in Sources */,
+				745933292138536D005F35F1 /* SortyCardsViewController.swift in Sources */,
+				7459332F2138536D005F35F1 /* SortyCards.xcdatamodeld in Sources */,
+				7459336C213856C7005F35F1 /* CardRank.swift in Sources */,
+				7459336E21385730005F35F1 /* SortyCard.swift in Sources */,
+				745933272138536D005F35F1 /* AppDelegate.swift in Sources */,
+				7459337121385A17005F35F1 /* ArrayExtensions.swift in Sources */,
+				7459336A213855D5005F35F1 /* CardType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		745933362138536D005F35F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7459333F2138536D005F35F1 /* SortyCardsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		745933412138536D005F35F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7459334A2138536D005F35F1 /* SortyCardsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7459333C2138536D005F35F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 745933222138536D005F35F1 /* SortyCards */;
+			targetProxy = 7459333B2138536D005F35F1 /* PBXContainerItemProxy */;
+		};
+		745933472138536D005F35F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 745933222138536D005F35F1 /* SortyCards */;
+			targetProxy = 745933462138536D005F35F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7459332A2138536D005F35F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7459332B2138536D005F35F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		745933322138536D005F35F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				745933332138536D005F35F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7459334C2138536D005F35F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7459334D2138536D005F35F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7459334F2138536D005F35F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8J8CUXWK9;
+				INFOPLIST_FILE = SortyCards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinkly.SortyCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		745933502138536D005F35F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8J8CUXWK9;
+				INFOPLIST_FILE = SortyCards/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinkly.SortyCards;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		745933522138536D005F35F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8J8CUXWK9;
+				INFOPLIST_FILE = SortyCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinkly.SortyCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SortyCards.app/SortyCards";
+			};
+			name = Debug;
+		};
+		745933532138536D005F35F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8J8CUXWK9;
+				INFOPLIST_FILE = SortyCardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinkly.SortyCardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SortyCards.app/SortyCards";
+			};
+			name = Release;
+		};
+		745933552138536D005F35F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8J8CUXWK9;
+				INFOPLIST_FILE = SortyCardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinkly.SortyCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SortyCards;
+			};
+			name = Debug;
+		};
+		745933562138536D005F35F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K8J8CUXWK9;
+				INFOPLIST_FILE = SortyCardsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.twinkly.SortyCardsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SortyCards;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7459331E2138536D005F35F1 /* Build configuration list for PBXProject "SortyCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7459334C2138536D005F35F1 /* Debug */,
+				7459334D2138536D005F35F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7459334E2138536D005F35F1 /* Build configuration list for PBXNativeTarget "SortyCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7459334F2138536D005F35F1 /* Debug */,
+				745933502138536D005F35F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		745933512138536D005F35F1 /* Build configuration list for PBXNativeTarget "SortyCardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				745933522138536D005F35F1 /* Debug */,
+				745933532138536D005F35F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		745933542138536D005F35F1 /* Build configuration list for PBXNativeTarget "SortyCardsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				745933552138536D005F35F1 /* Debug */,
+				745933562138536D005F35F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7459332D2138536D005F35F1 /* SortyCards.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7459332E2138536D005F35F1 /* SortyCards.xcdatamodel */,
+			);
+			currentVersion = 7459332E2138536D005F35F1 /* SortyCards.xcdatamodel */;
+			path = SortyCards.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7459331B2138536D005F35F1 /* Project object */;
+}
