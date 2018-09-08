@@ -8,9 +8,28 @@
 
 import Foundation
 
+enum SortingType {
+
+    case sort123
+    case sort777
+    case sortSmart
+
+}
+
 class CardSorter {
 
-    static func sort123(deck: [SortyCard]) -> [[SortyCard]] {
+    static func sort(sortingType: SortingType, deck: [SortyCard]) -> [[SortyCard]]? {
+        switch sortingType {
+        case .sort123:
+            return sort123(deck: deck)
+        case .sort777:
+            return sort777(deck: deck)
+        case .sortSmart:
+            return sortSmart(deck: deck)
+        }
+    }
+
+    private static func sort123(deck: [SortyCard]) -> [[SortyCard]]? {
         var sortedCardList = [[SortyCard]]()
 
         let sortedDeck = deck.sorted { (sortyCard1, sortyCard2) -> Bool in
@@ -20,6 +39,7 @@ class CardSorter {
                 return sortyCard1.type.priority < sortyCard2.type.priority
             }
         }
+
         var searchDeck = sortedDeck
 
         for card in sortedDeck {
@@ -35,7 +55,7 @@ class CardSorter {
 
         sortedCardList.append(searchDeck)
 
-        return sortedCardList
+        return checkAndReturn(sortedCardList: sortedCardList)
     }
 
     private static func checkCardSequenceForSort123(card: SortyCard, deck: [SortyCard]) -> [SortyCard] {
@@ -53,9 +73,8 @@ class CardSorter {
         }
     }
 
-    static func sort777(deck: [SortyCard]) -> [[SortyCard]] {
+    private static func sort777(deck: [SortyCard]) -> [[SortyCard]]? {
         var sortedCardList = [[SortyCard]]()
-
         var searchDeck = deck
 
         for card in deck {
@@ -71,7 +90,7 @@ class CardSorter {
 
         sortedCardList.append(searchDeck)
 
-        return sortedCardList
+        return checkAndReturn(sortedCardList: sortedCardList)
     }
 
     private static func checkCardSequenceForSort777(card: SortyCard, deck: [SortyCard]) -> [SortyCard] {
@@ -81,7 +100,7 @@ class CardSorter {
 
         if let nextCardIndex = nextCardIndex {
             var reducedDeck = deck
-            
+
             if let cardIndex = reducedDeck.index(where: { (sortyCard) -> Bool in
                 return sortyCard == card
             }) {
@@ -97,8 +116,16 @@ class CardSorter {
         }
     }
 
-    static func sortSmart(deck: [SortyCard]) -> [[SortyCard]] {
+    private static func sortSmart(deck: [SortyCard]) -> [[SortyCard]]? {
         return [[SortyCard]]()
+    }
+
+    private static func checkAndReturn(sortedCardList: [[SortyCard]]) -> [[SortyCard]]? {
+        if sortedCardList.count < 2 {
+            return nil
+        } else {
+            return sortedCardList
+        }
     }
 
 }

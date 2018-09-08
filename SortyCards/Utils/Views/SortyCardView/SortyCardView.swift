@@ -33,16 +33,21 @@ class SortyCardView: UIView {
         commonInit()
     }
     
-    func commonInit(sortyCard: SortyCard? = nil) {
+    private func commonInit(sortyCard: SortyCard? = nil) {
         Bundle.main.loadNibNamed("SortyCardView", owner: self, options: nil)
         addSubview(self.contentView)
         
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        contentView.layer.cornerRadius = 10
+        contentView.drawShadow()
+        
         if let sortyCard = sortyCard {
             cardImageView.image = sortyCard.image
+            self.tag = sortyCard.viewTag
         }
+        
     }
     
 }

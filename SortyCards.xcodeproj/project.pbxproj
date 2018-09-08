@@ -23,6 +23,7 @@
 		7459337121385A17005F35F1 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459337021385A17005F35F1 /* ArrayExtensions.swift */; };
 		7459337321385E2E005F35F1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7459337221385E2D005F35F1 /* Info.plist */; };
 		7459337521385F7B005F35F1 /* CardSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459337421385F7B005F35F1 /* CardSorter.swift */; };
+		74F74BD62143085A008A3DC1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		7459337021385A17005F35F1 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		7459337221385E2D005F35F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7459337421385F7B005F35F1 /* CardSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSorter.swift; sourceTree = "<group>"; };
+		74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				7459337021385A17005F35F1 /* ArrayExtensions.swift */,
+				74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				7459332F2138536D005F35F1 /* SortyCards.xcdatamodeld in Sources */,
 				7459336C213856C7005F35F1 /* CardRank.swift in Sources */,
 				7459336E21385730005F35F1 /* SortyCard.swift in Sources */,
+				74F74BD62143085A008A3DC1 /* UIViewExtensions.swift in Sources */,
 				745933272138536D005F35F1 /* AppDelegate.swift in Sources */,
 				7459337121385A17005F35F1 /* ArrayExtensions.swift in Sources */,
 				7459336A213855D5005F35F1 /* CardType.swift in Sources */,
