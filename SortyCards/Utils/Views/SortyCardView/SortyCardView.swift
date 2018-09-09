@@ -58,9 +58,9 @@ class SortyCardView: UIView {
         var contentViewIntersectionFrame = CGRect.zero
         
         if requestEntireCard {
-            contentViewIntersectionFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y + (2 * SortyCardConstants.verticalIntervalBetweenCards), width: SortyCardConstants.cardWidth, height: contentView.frame.size.height - (4 * SortyCardConstants.verticalIntervalBetweenCards))
+            contentViewIntersectionFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: SortyCardConstants.cardWidth, height: contentView.frame.size.height)
         } else {
-            contentViewIntersectionFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y + (2 * SortyCardConstants.verticalIntervalBetweenCards), width: SortyCardConstants.horizontalIntervalBetweenCards, height: contentView.frame.size.height - (4 * SortyCardConstants.verticalIntervalBetweenCards))
+            contentViewIntersectionFrame = CGRect(x: contentView.frame.origin.x, y: contentView.frame.origin.y, width: SortyCardConstants.cardWidth / 2.0, height: contentView.frame.size.height)
         }
         
         return superview.convert(contentViewIntersectionFrame, from: self)

@@ -108,4 +108,16 @@ class TestDecks {
                         SortyCard(rank: .three, type: .spades),
                         SortyCard(rank: .three, type: .clubs)]
     
+    static let deck8 = [SortyCard(rank: .ace, type: .hearts),
+                        SortyCard(rank: .two, type: .spades),
+                        SortyCard(rank: .five, type: .spades),
+                        SortyCard(rank: .four, type: .hearts),
+                        SortyCard(rank: .ace, type: .spades),
+                        SortyCard(rank: .three, type: .diamonds),
+                        SortyCard(rank: .four, type: .clubs),
+                        SortyCard(rank: .four, type: .spades),
+                        SortyCard(rank: .ace, type: .diamonds),
+                        SortyCard(rank: .three, type: .spades),
+                        SortyCard(rank: .four, type: .diamonds)]
+    
 }

@@ -271,19 +271,40 @@ class CardSorterTests: XCTestCase {
             return
         }
         
-        let correctSmartSortedCardGroups = [[SortyCard(rank: .ace, type: .spades),
-                                             SortyCard(rank: .two, type: .spades),
-                                             SortyCard(rank: .three, type: .spades),
-                                             SortyCard(rank: .four, type: .spades)],
-                                            [SortyCard(rank: .three, type: .diamonds),
+        let correctSmartSortedCardGroups = [[SortyCard(rank: .three, type: .diamonds),
                                              SortyCard(rank: .four, type: .diamonds),
                                              SortyCard(rank: .five, type: .diamonds)],
                                             [SortyCard(rank: .ace, type: .hearts),
-                                             SortyCard(rank: .four, type: .hearts),
-                                             SortyCard(rank: .ace, type: .diamonds),
-                                             SortyCard(rank: .four, type: .clubs)]]
+                                             SortyCard(rank: .ace, type: .spades),
+                                             SortyCard(rank: .ace, type: .diamonds)],
+                                            [SortyCard(rank: .four, type: .hearts),
+                                             SortyCard(rank: .four, type: .clubs),
+                                             SortyCard(rank: .four, type: .spades)],
+                                            [SortyCard(rank: .two, type: .spades),
+                                             SortyCard(rank: .three, type: .spades)]]
         
         XCTAssertEqual(sortResult, correctSmartSortedCardGroups, "Smart sort testing is failed for sample deck.")
+    }
+    
+    func testSortSmartWithDeck8_success() {
+        guard let sortResult = CardSorter.sort(sortingType: .sortSmart, deck: TestDecks.deck8) else {
+            XCTFail("Smart sort testing is failed for deck 8.")
+            return
+        }
+        
+        let correctSmartSortedCardGroups = [[SortyCard(rank: .ace, type: .spades),
+                                             SortyCard(rank: .two, type: .spades),
+                                             SortyCard(rank: .three, type: .spades),
+                                             SortyCard(rank: .four, type: .spades),
+                                             SortyCard(rank: .five, type: .spades)],
+                                            [SortyCard(rank: .four, type: .hearts),
+                                             SortyCard(rank: .four, type: .clubs),
+                                             SortyCard(rank: .four, type: .diamonds)],
+                                            [SortyCard(rank: .ace, type: .diamonds),
+                                             SortyCard(rank: .ace, type: .hearts),
+                                             SortyCard(rank: .three, type: .diamonds)]]
+        
+        XCTAssertEqual(sortResult, correctSmartSortedCardGroups, "Smart sort testing is failed for deck 8.")
     }
     
 }

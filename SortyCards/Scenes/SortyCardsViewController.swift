@@ -17,19 +17,21 @@ class SortyCardsViewController: UIViewController {
     // MARK: - Variables
 
     private let sampleDeck = [SortyCard(rank: .ace, type: .hearts),
-                              SortyCard(rank: .ace, type: .spades),
-                              SortyCard(rank: .ace, type: .clubs),
-                              SortyCard(rank: .two, type: .diamonds),
-                              SortyCard(rank: .two, type: .spades),
-                              SortyCard(rank: .three, type: .spades),
-                              SortyCard(rank: .three, type: .clubs)]
+        SortyCard(rank: .two, type: .spades),
+        SortyCard(rank: .five, type: .diamonds),
+        SortyCard(rank: .four, type: .hearts),
+        SortyCard(rank: .ace, type: .spades),
+        SortyCard(rank: .three, type: .diamonds),
+        SortyCard(rank: .four, type: .clubs),
+        SortyCard(rank: .four, type: .spades),
+        SortyCard(rank: .ace, type: .diamonds),
+        SortyCard(rank: .three, type: .spades),
+        SortyCard(rank: .four, type: .diamonds)]
 
     private var originalDeck = [SortyCard]()
     private var deck = [SortyCard]()
-
-    private var isStarted = false
-    private var cardPosition = CGRect.zero
     private var cardBeginningPosition = CGRect.zero
+    private var cardPositions = [CGPoint]()
 
     // MARK: - Life cycle methods
 
@@ -46,10 +48,22 @@ class SortyCardsViewController: UIViewController {
     private func initialization() {
         deck = originalDeck
 
-        cardPosition = CGRect(x: (view.frame.size.width - (SortyCardConstants.horizontalIntervalBetweenCards * CGFloat(deck.count + 1))) / 2, y: view.frame.size.height - (SortyCardConstants.cardHeight * 1.5) - (SortyCardConstants.verticalIntervalBetweenCards * CGFloat((deck.count / 2) + 1)), width: SortyCardConstants.cardWidth, height: SortyCardConstants.cardHeight)
         cardBeginningPosition = CGRect(x: (view.frame.size.width - SortyCardConstants.cardWidth) / 2, y: view.frame.size.height, width: SortyCardConstants.cardWidth, height: SortyCardConstants.cardHeight)
-
+        
+        calculateCardPositions()
         updateCardPositions(forCardDistirution: true)
+    }
+
+    func calculateCardPositions() {
+        let slice = (SortyCardConstants.endAngle - SortyCardConstants.startAngle) * CGFloat.pi / CGFloat(deck.count - 1)
+
+        cardPositions = (0..<deck.count).map({ index -> CGPoint in
+            let angle = (slice * CGFloat(index)) + (SortyCardConstants.startAngle * .pi)
+            let x = SortyCardConstants.arcCenter.x + SortyCardConstants.arcRadius * cos(angle)
+            let y = SortyCardConstants.arcCenter.y + SortyCardConstants.arcRadius * sin(angle)
+            
+            return CGPoint(x: x, y: y)
+        })
     }
 
     private func updateDeckWithNewCardGroups(cardGroups: [[SortyCard]]?) {
@@ -69,11 +83,9 @@ class SortyCardsViewController: UIViewController {
     }
 
     private func updateCardPositions(forCardDistirution: Bool = false, forPanGesture: Bool = false) {
-        var currentCardStartingX = cardPosition.origin.x
-        var currentCardStartingY = cardPosition.origin.y
-
         for index in 0..<deck.count {
-            let cardToPosition = CGRect(x: currentCardStartingX, y: currentCardStartingY, width: SortyCardConstants.cardWidth, height: SortyCardConstants.cardHeight)
+            let position = cardPositions[index]
+            let cardToPosition = CGRect(x: position.x - (SortyCardConstants.cardWidth / 2), y: position.y - (SortyCardConstants.cardHeight / 2), width: SortyCardConstants.cardWidth, height: SortyCardConstants.cardHeight)
 
             var sortyCardView = view.viewWithTag(deck[index].viewTag) as? SortyCardView
 
@@ -82,49 +94,28 @@ class SortyCardsViewController: UIViewController {
             }
 
             if let sortyCardView = sortyCardView {
-                currentCardStartingX += SortyCardConstants.horizontalIntervalBetweenCards
-
-                if index < (deck.count / 2) {
-                    currentCardStartingY -= SortyCardConstants.verticalIntervalBetweenCards
-                } else if(index != (deck.count / 2) - 1) {
-                    currentCardStartingY += SortyCardConstants.verticalIntervalBetweenCards
-                }
-
-                if index < (deck.count / 2) {
-                    sortyCardView.contentView.transform = CGAffineTransform.identity.rotated(by: CGFloat((-1.0 * Double((deck.count / 2) - index)) * SortyCardConstants.rotationCoefficient))
-                } else if index == (deck.count / 2) {
-                    sortyCardView.contentView.transform = CGAffineTransform.identity
-                } else {
-                    sortyCardView.contentView.transform = CGAffineTransform.identity.rotated(by: CGFloat((Double(index - (deck.count / 2))) * SortyCardConstants.rotationCoefficient))
-                }
+                var animationDuration = 0.0
 
                 if forCardDistirution {
                     sortyCardView.isUserInteractionEnabled = true
                     sortyCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(draggedView(_:))))
-                }
-
-                if !forCardDistirution {
-                    sortyCardView.removeFromSuperview()
-                }
-
-                view.addSubview(sortyCardView)
-
-                var animationDuration = 0.0
-
-                if forCardDistirution {
+                    
                     animationDuration = SortyCardConstants.distributionAnimationDuration
+                    randomDeckButton.isEnabled = false
                 } else if forPanGesture {
-                    animationDuration = SortyCardConstants.sortAnimationDurationForPanGesture
+                    sortyCardView.removeFromSuperview()
+                    animationDuration = SortyCardConstants.panGestureAnimationDuration
                 } else {
+                    sortyCardView.removeFromSuperview()
                     animationDuration = SortyCardConstants.sortAnimationDuration
                 }
-
-                if forCardDistirution {
-                    randomDeckButton.isEnabled = false
-                }
+                
+                view.addSubview(sortyCardView)
 
                 UIView.animate(withDuration: animationDuration, delay: forCardDistirution ? Double(index) * SortyCardConstants.distributionAnimationDuration : 0, options: [], animations: {
                     sortyCardView.frame = cardToPosition
+                    
+                    sortyCardView.contentView.transform = CGAffineTransform.identity.rotated(by: .pi * (0.5 + SortyCardConstants.startAngle + (SortyCardConstants.endAngle - SortyCardConstants.startAngle) * CGFloat(index) / CGFloat(self.deck.count)))
                 }) { _ in
                     if forCardDistirution, index == self.deck.count - 1 {
                         self.randomDeckButton.isEnabled = true
@@ -184,7 +175,6 @@ class SortyCardsViewController: UIViewController {
         }
     }
 
-
     // MARK: - Actions
 
     @IBAction func randomDeckTapped(_ sender: Any) {
@@ -214,4 +204,3 @@ class SortyCardsViewController: UIViewController {
     }
 
 }
-
