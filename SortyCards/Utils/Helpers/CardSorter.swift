@@ -78,7 +78,7 @@ class CardSorter {
         var searchDeck = deck
 
         for card in deck {
-            let sortedCards = checkCardSequenceForSort777(card: card, deck: searchDeck)
+            let sortedCards = checkSameTypeCardsForSort777(card: card, deck: searchDeck)
 
             if sortedCards.count > 2 {
                 sortedCardList.append(sortedCards)
@@ -93,7 +93,7 @@ class CardSorter {
         return checkAndReturn(sortedCardList: sortedCardList)
     }
 
-    private static func checkCardSequenceForSort777(card: SortyCard, deck: [SortyCard]) -> [SortyCard] {
+    private static func checkSameTypeCardsForSort777(card: SortyCard, deck: [SortyCard]) -> [SortyCard] {
         let nextCardIndex = deck.index { (deckCard) -> Bool in
             return (card.type != deckCard.type && deckCard.rank.rawValue == card.rank.rawValue)
         }
@@ -107,7 +107,7 @@ class CardSorter {
                 reducedDeck.remove(at: cardIndex)
             }
 
-            var returnArray = checkCardSequenceForSort777(card: deck[nextCardIndex], deck: reducedDeck)
+            var returnArray = checkSameTypeCardsForSort777(card: deck[nextCardIndex], deck: reducedDeck)
             returnArray.insert(card, at: 0)
 
             return returnArray
@@ -117,7 +117,44 @@ class CardSorter {
     }
 
     private static func sortSmart(deck: [SortyCard]) -> [[SortyCard]]? {
-        return [[SortyCard]]()
+        var sortedCardList = [[SortyCard]]()
+        var searchDeck = deck
+        
+        let sort123CardGroups = sort123(deck: deck)
+
+        if let sort123CardGroups = sort123CardGroups {
+            for cardGroup in sort123CardGroups {
+                if cardGroup.count > 3 {
+                    let difference = cardGroup.count - 3
+                    
+                    for index in ((cardGroup.count - 1 - difference)..<(cardGroup.count - 1)).reversed() {
+                        let sort777CardGroups = sort777(deck: searchDeck)
+                    }
+                } else {
+                    sortedCardList.append(cardGroup)
+                    searchDeck = searchDeck.filter({ (sortyCard) -> Bool in
+                        return !cardGroup.contains(sortyCard)
+                    })
+                }
+            }
+        } else {
+            return nil
+        }
+
+        for card in deck {
+            let sortedCards = checkSameTypeCardsForSort777(card: card, deck: searchDeck)
+
+            if sortedCards.count > 2 {
+                sortedCardList.append(sortedCards)
+                searchDeck = searchDeck.filter({ (sortyCard) -> Bool in
+                    return !sortedCards.contains(sortyCard)
+                })
+            }
+        }
+
+        sortedCardList.append(searchDeck)
+
+        return checkAndReturn(sortedCardList: sortedCardList)
     }
 
     private static func checkAndReturn(sortedCardList: [[SortyCard]]) -> [[SortyCard]]? {

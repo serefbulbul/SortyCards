@@ -24,6 +24,8 @@
 		7459337321385E2E005F35F1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7459337221385E2D005F35F1 /* Info.plist */; };
 		7459337521385F7B005F35F1 /* CardSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459337421385F7B005F35F1 /* CardSorter.swift */; };
 		74F74BD62143085A008A3DC1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */; };
+		74F74BDC21446D3B008A3DC1 /* CardSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BDB21446D3B008A3DC1 /* CardSorterTests.swift */; };
+		74F74BDE2144EDFB008A3DC1 /* SortyCardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BDD2144EDFB008A3DC1 /* SortyCardConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		7459337221385E2D005F35F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7459337421385F7B005F35F1 /* CardSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSorter.swift; sourceTree = "<group>"; };
 		74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		74F74BDB21446D3B008A3DC1 /* CardSorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSorterTests.swift; sourceTree = "<group>"; };
+		74F74BDD2144EDFB008A3DC1 /* SortyCardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortyCardConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 		7459333D2138536D005F35F1 /* SortyCardsTests */ = {
 			isa = PBXGroup;
 			children = (
+				74F74BD721446CEB008A3DC1 /* Utils */,
 				7459333E2138536D005F35F1 /* SortyCardsTests.swift */,
 				745933402138536D005F35F1 /* Info.plist */,
 			);
@@ -203,6 +208,7 @@
 		7459335D213853EC005F35F1 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				74F74BDD2144EDFB008A3DC1 /* SortyCardConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -247,6 +253,22 @@
 				74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		74F74BD721446CEB008A3DC1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				74F74BD821446CF3008A3DC1 /* Helpers */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		74F74BD821446CF3008A3DC1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				74F74BDB21446D3B008A3DC1 /* CardSorterTests.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,6 +411,7 @@
 				74593362213854DC005F35F1 /* SortyCardView.swift in Sources */,
 				745933292138536D005F35F1 /* SortyCardsViewController.swift in Sources */,
 				7459332F2138536D005F35F1 /* SortyCards.xcdatamodeld in Sources */,
+				74F74BDE2144EDFB008A3DC1 /* SortyCardConstants.swift in Sources */,
 				7459336C213856C7005F35F1 /* CardRank.swift in Sources */,
 				7459336E21385730005F35F1 /* SortyCard.swift in Sources */,
 				74F74BD62143085A008A3DC1 /* UIViewExtensions.swift in Sources */,
@@ -402,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F74BDC21446D3B008A3DC1 /* CardSorterTests.swift in Sources */,
 				7459333F2138536D005F35F1 /* SortyCardsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

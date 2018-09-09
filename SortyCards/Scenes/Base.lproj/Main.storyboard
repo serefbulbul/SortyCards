@@ -21,10 +21,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortCardsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="yfN-NC-src">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-K8-2mX">
-                                <rect key="frame" x="20" y="20" width="75" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANq-px-dQK">
+                                <rect key="frame" x="513" y="20" width="134" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="cXO-xH-Yke"/>
+                                    <constraint firstAttribute="height" constant="30" id="klv-wq-6Sy"/>
+                                </constraints>
+                                <state key="normal" title="Random Deck">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomDeckTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wsn-vS-MP1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qR-K8-2mX">
+                                <rect key="frame" x="20" y="20" width="134.5" height="30"/>
+                                <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cXR-YE-nhb"/>
                                 </constraints>
                                 <state key="normal" title="1-2-3 Sort">
@@ -35,10 +46,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6X-c6-2QE">
-                                <rect key="frame" x="20" y="58" width="75" height="30"/>
+                                <rect key="frame" x="184.5" y="20" width="134" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1Cf-VD-31k"/>
-                                    <constraint firstAttribute="width" constant="75" id="QP3-aI-eUC"/>
                                 </constraints>
                                 <state key="normal" title="7-7-7 Sort">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,9 +58,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSs-39-FZv">
-                                <rect key="frame" x="20" y="96" width="75" height="30"/>
+                                <rect key="frame" x="348.5" y="20" width="134.5" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="c1a-dm-UI5"/>
                                     <constraint firstAttribute="height" constant="30" id="cDe-3n-HVS"/>
                                 </constraints>
                                 <state key="normal" title="Smart Sort">
@@ -64,18 +73,27 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yfN-NC-src" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4cc-Jr-ypj"/>
+                            <constraint firstItem="nSs-39-FZv" firstAttribute="width" secondItem="6qR-K8-2mX" secondAttribute="width" id="6kJ-Bb-gHY"/>
+                            <constraint firstItem="l6X-c6-2QE" firstAttribute="leading" secondItem="6qR-K8-2mX" secondAttribute="trailing" constant="30" id="7IY-x3-XNZ"/>
+                            <constraint firstItem="ANq-px-dQK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="7lo-Kn-gXT"/>
+                            <constraint firstItem="nSs-39-FZv" firstAttribute="leading" secondItem="l6X-c6-2QE" secondAttribute="trailing" constant="30" id="7qn-3i-lSa"/>
                             <constraint firstItem="6qR-K8-2mX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="84U-bH-EOT"/>
                             <constraint firstItem="yfN-NC-src" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8Q3-B2-RGY"/>
-                            <constraint firstItem="nSs-39-FZv" firstAttribute="top" secondItem="l6X-c6-2QE" secondAttribute="bottom" constant="8" id="E9X-mR-EZ3"/>
+                            <constraint firstItem="l6X-c6-2QE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="DTm-s7-IbL"/>
+                            <constraint firstItem="ANq-px-dQK" firstAttribute="width" secondItem="6qR-K8-2mX" secondAttribute="width" id="DaN-qo-Vte"/>
                             <constraint firstItem="6qR-K8-2mX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GdE-FY-hfa"/>
-                            <constraint firstItem="l6X-c6-2QE" firstAttribute="top" secondItem="6qR-K8-2mX" secondAttribute="bottom" constant="8" id="I7O-mQ-mqa"/>
                             <constraint firstItem="yfN-NC-src" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kh5-2n-ZJ4"/>
+                            <constraint firstItem="l6X-c6-2QE" firstAttribute="width" secondItem="6qR-K8-2mX" secondAttribute="width" id="Sgf-oe-cux"/>
                             <constraint firstItem="yfN-NC-src" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TRJ-Dn-BUh"/>
-                            <constraint firstItem="nSs-39-FZv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dFl-cY-7zf"/>
-                            <constraint firstItem="l6X-c6-2QE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vp9-fI-OZw"/>
+                            <constraint firstItem="ANq-px-dQK" firstAttribute="leading" secondItem="nSs-39-FZv" secondAttribute="trailing" constant="30" id="fum-gI-JgQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ANq-px-dQK" secondAttribute="trailing" constant="20" id="n8o-4y-FTY"/>
+                            <constraint firstItem="nSs-39-FZv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="u7A-RF-ZYo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="randomDeckButton" destination="ANq-px-dQK" id="mxp-Kc-bpH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
