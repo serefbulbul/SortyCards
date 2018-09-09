@@ -26,6 +26,7 @@
 		74F74BD62143085A008A3DC1 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */; };
 		74F74BDC21446D3B008A3DC1 /* CardSorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BDB21446D3B008A3DC1 /* CardSorterTests.swift */; };
 		74F74BDE2144EDFB008A3DC1 /* SortyCardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BDD2144EDFB008A3DC1 /* SortyCardConstants.swift */; };
+		74F74BE12145130E008A3DC1 /* TestDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F74BE02145130E008A3DC1 /* TestDecks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		74F74BD52143085A008A3DC1 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		74F74BDB21446D3B008A3DC1 /* CardSorterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSorterTests.swift; sourceTree = "<group>"; };
 		74F74BDD2144EDFB008A3DC1 /* SortyCardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortyCardConstants.swift; sourceTree = "<group>"; };
+		74F74BE02145130E008A3DC1 /* TestDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDecks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		7459333D2138536D005F35F1 /* SortyCardsTests */ = {
 			isa = PBXGroup;
 			children = (
+				74F74BDF21451301008A3DC1 /* TestData */,
 				74F74BD721446CEB008A3DC1 /* Utils */,
 				7459333E2138536D005F35F1 /* SortyCardsTests.swift */,
 				745933402138536D005F35F1 /* Info.plist */,
@@ -269,6 +272,14 @@
 				74F74BDB21446D3B008A3DC1 /* CardSorterTests.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		74F74BDF21451301008A3DC1 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				74F74BE02145130E008A3DC1 /* TestDecks.swift */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F74BE12145130E008A3DC1 /* TestDecks.swift in Sources */,
 				74F74BDC21446D3B008A3DC1 /* CardSorterTests.swift in Sources */,
 				7459333F2138536D005F35F1 /* SortyCardsTests.swift in Sources */,
 			);
